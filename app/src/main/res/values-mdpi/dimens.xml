@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- mdpi dimens -->
+
+    <dimen name="button_width_height">65dp</dimen>
+    <dimen name="button_text_size">37.5dp</dimen>
+    <dimen name="basic_margin_size">3dp</dimen>
+</resources>

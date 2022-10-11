@@ -1,0 +1,624 @@
+<!-- 키패드 Fragment -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragmentKeyPad"
+            type="com.homenumber.print_2.fragment.Fragment_Keypad" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_fragment_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/C_FFFFFF">
+
+        <!-- 상태바 형식의 헤드라인 -->
+        <RelativeLayout
+            android:id="@+id/layout_header"
+            android:background="@drawable/layout_border"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- 타이틀 아이콘 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_title"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="11dp"
+                android:src="@drawable/img_title_icon" />
+
+
+            <!-- 타이틀 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_fragment_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:gravity="center|left"
+                android:textStyle="bold"
+
+                android:text="키패드"
+                android:textColor="@color/C_000000"
+                android:textSize="22dp"
+                android:layout_toEndOf="@id/iv_title"/>
+
+        </RelativeLayout>
+
+        <!-- 키패드 컨텐츠 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_header">
+
+            <!-- 헤더 가이드라인 -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".30" />
+
+            <!-- 바텀 가이드라인 -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".88" />
+
+            <!-- 키보드 넘버 가이드라인(1) -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_number_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".305" />
+
+            <!-- 키보드 넘버 가이드라인(2) -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_number_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".435" />
+
+            <!-- 키보드 넘버 가이드라인(3) -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_number_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".565" />
+
+            <!-- 키보드 넘버 가이드라인(4) -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_number_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".695" />
+
+            <!-- 키보드 넘버 가이드라인(5) -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_number_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".825" />
+
+            <!-- 좌측 세로 가이드라인 -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.13" />
+
+            <!-- 우측 세로 가이드라인 -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.870" />
+
+            <!-- 중앙 좌측편 세로 가이드라인 -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.383" />
+
+            <!-- 중앙 우측편 세로 가이드라인 -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_center_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.616" />
+            <!-- Infomation 레이아웃 -->
+
+
+
+
+            <!-- Infomation 레이아웃 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_homenumber"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="50dp"
+                android:background="@android:color/white"
+
+                app:layout_constraintBottom_toBottomOf="@id/guideline_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <!-- 중앙 가이드라인 -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_center_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="66dp" />
+
+                <!-- 상단 가로 가이드라인 -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_header_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <!-- 하단 가로 가이드라인 -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_bottom_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent=".99" />
+
+                <!-- 좌측 세로 가이드라인 -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.13" />
+
+                <!-- 우측 세로 가이드라인 -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.87" />
+
+                <!-- 중앙 좌측편 세로 가이드라인 -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_center_start_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="154dp" />
+
+                <!-- 중앙 우측편 세로 가이드라인 -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_center_end_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="154dp" />
+
+                <!-- HOME NUMBER -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_homenumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/str_number_101"
+                    android:textColor="#000000"
+                    android:textSize="35dp"
+                    android:fontFamily="@font/custom_font"
+                    app:layout_constraintBottom_toTopOf="@id/guideline_center_in"
+                    app:layout_constraintEnd_toEndOf="@id/guideline_end_in"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start_in"
+                    app:layout_constraintTop_toTopOf="@id/guideline_header_in"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <!-- 이름 :: 홈넘버 8자리가 모두 적용되면 나옵니다. -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="top|center"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:text="홈넘버를 입력해주세요"
+                    android:fontFamily="@font/custom_font"
+                    app:layout_constraintBottom_toTopOf="@id/guideline_bottom_in"
+                    app:layout_constraintEnd_toEndOf="@id/guideline_center_end_home"
+                    app:layout_constraintStart_toStartOf="@id/guideline_center_start_home"
+                    app:layout_constraintTop_toBottomOf="@id/guideline_center_in" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 숫자패드 1 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_1"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(1))}"
+                android:text="@string/str_number_1"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:textSize="32dp"
+                android:fontFamily="@font/custom_font"
+                android:stateListAnimator="@null"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_2"
+
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_1" />
+
+            <!-- 숫자패드 2 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_2"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(2))}"
+                android:text="@string/str_number_2"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:textSize="32dp"
+                android:fontFamily="@font/custom_font"
+                android:stateListAnimator="@null"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_2"
+                app:layout_constraintEnd_toEndOf="@id/guideline_center_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_center_start"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:text="A B C"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline_center_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_center_start"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number_2" />
+
+
+
+            <!-- 숫자패드 3 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_3"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(3))}"
+                android:text="@string/str_number_3"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:textSize="32dp"
+                android:stateListAnimator="@null"
+                android:fontFamily="@font/custom_font"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_2"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:gravity="center"
+                android:text="D E F"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_2"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number_2" />
+
+
+            <!-- 숫자패드 4 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_4"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(4))}"
+                android:text="@string/str_number_4"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:textSize="32dp"
+                android:fontFamily="@font/custom_font"
+                android:stateListAnimator="@null"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_3"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:gravity="center"
+                android:text="G H I"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_3"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number_3" />
+
+
+            <!-- 숫자패드 5 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_5"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(5))}"
+                android:text="@string/str_number_5"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:textSize="32dp"
+
+                android:fontFamily="@font/custom_font"
+                android:stateListAnimator="@null"
+
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_3"
+                app:layout_constraintEnd_toEndOf="@id/guideline_center_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_center_start"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_2" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:text="J K L"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline_center_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_center_start"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number_3" />
+
+            <!-- 숫자패드 6 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_6"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(6))}"
+                android:text="@string/str_number_6"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:textSize="32dp"
+                android:fontFamily="@font/custom_font"
+                android:stateListAnimator="@null"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_3"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:gravity="center"
+                android:text="M N O"
+
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_2"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number_3" />
+
+            <!-- 숫자패드 7 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_7"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(7))}"
+                android:text="@string/str_number_7"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:textSize="32dp"
+                android:fontFamily="@font/custom_font"
+                android:stateListAnimator="@null"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_4"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_3" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:gravity="center"
+                android:text="P Q R S"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_3"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number_4" />
+
+
+            <!-- 숫자패드 8 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_8"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(8))}"
+                android:text="@string/str_number_8"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:textSize="32dp"
+
+                android:fontFamily="@font/custom_font"
+                android:stateListAnimator="@null"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_4"
+                app:layout_constraintEnd_toEndOf="@id/guideline_center_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_center_start"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_3" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:text="T U V"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline_center_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_center_start"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number_4" />
+
+
+            <!-- 숫자패드 9 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_9"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(9))}"
+                android:text="@string/str_number_9"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:textSize="32dp"
+                android:fontFamily="@font/custom_font"
+                android:stateListAnimator="@null"
+
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_4"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_3" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:gravity="center"
+                android:text="W X Y Z"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_2"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number_4" />
+
+            <!-- 숫자패드 Clear -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_c"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Clear()}"
+                android:text="C"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:stateListAnimator="@null"
+                android:textSize="28dp"
+                android:fontFamily="@font/custom_font"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_5"
+
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_4" />
+
+            <!-- 숫자패드 0 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_0"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(String.valueOf(0))}"
+                android:text="@string/str_number_0"
+                android:textColor="@drawable/drawable_calculator_textcolor"
+                android:stateListAnimator="@null"
+                android:textSize="32dp"
+                android:paddingBottom="6dp"
+                android:fontFamily="@font/custom_font"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_5"
+                app:layout_constraintEnd_toEndOf="@id/guideline_center_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_center_start"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_4" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:text="+"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline_center_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_center_start"
+                app:layout_constraintBottom_toTopOf="@id/guideline_number_5" />
+
+            <!-- 숫자패드 Delete -->
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_d"
+                android:layout_width="@dimen/button_width_height"
+                android:layout_height="@dimen/button_width_height"
+                android:layout_margin="@dimen/basic_margin_size"
+                android:background="@drawable/drawable_custom_number"
+                android:onClick="@{() -> fragmentKeyPad.onClick_Number(fragmentKeyPad.D)}"
+                android:paddingStart="30.75dp"
+                android:paddingTop="19.75dp"
+                android:paddingEnd="30.75dp"
+                android:paddingBottom="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_delete"
+                android:stateListAnimator="@null"
+                android:theme="@android:style/Widget.Material.Button"
+                android:fontFamily="@font/custom_font"
+                app:layout_constraintBottom_toBottomOf="@id/guideline_number_5"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintTop_toTopOf="@id/guideline_number_4" />
+
+            <!-- 운송장 출력 버튼 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_print"
+                android:layout_width="240dp"
+                android:paddingHorizontal="30dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/drawable_radius_login_button"
+                android:elevation="10dp"
+                android:letterSpacing="0"
+                android:text="@string/str_print"
+                android:textColor="#FFFFFF"
+                android:drawablePadding="10dp"
+                android:textSize="18dp"
+                android:drawableTint="@color/C_FFFFFF"
+                android:fontFamily="@font/custom_font"
+                app:layout_constraintTop_toBottomOf="@id/guideline_number_5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

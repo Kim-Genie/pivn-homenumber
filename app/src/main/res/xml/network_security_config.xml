@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- http 통신을 적용하기 위한 설정 -->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

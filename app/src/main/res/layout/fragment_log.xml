@@ -1,0 +1,63 @@
+<!-- 출력내역 Fragment -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragmentLog"
+            type="com.homenumber.print_2.fragment.Fragment_Log" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/C_FFFFFF"
+        android:orientation="vertical">
+
+        <!-- 상태바 형식의 헤드라인 -->
+        <include
+            android:id="@+id/layout_header"
+            layout="@layout/fragment_top_area" />
+
+        <!-- SwipeRefreshLayout -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout_header"
+            android:layout_alignParentBottom="true">
+
+            <!-- NestedScrollView -->
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- 주소록 리스트 -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/log_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fastScrollEnabled="true"
+                    android:scrollbars="none"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!-- 데이터가 없는 경우 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_null_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/msg_fires_print_please_save"
+            android:textColor="@color/C_000000"
+            android:textSize="15dp"
+            android:visibility="gone"
+
+            app:fontPath="fonts/homenumberB.ttf.mp3" />
+
+    </RelativeLayout>
+
+</layout>

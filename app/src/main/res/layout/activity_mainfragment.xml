@@ -1,0 +1,172 @@
+<!-- MainFragmentActivity -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.fragmentactivity.MainFragmentActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="activity"
+            type="com.homenumber.print_2.activity.fragmentactivity.MainFragmentActivity" />
+    </data>
+
+    <!-- 부모 레이아웃 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <!-- Custom Fragment ViewPager -->
+        <com.homenumber.print_2.view.CustomViewPager
+            android:id="@+id/viewPagerMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layout_bottom_menu_area"
+            android:layout_alignParentTop="true" />
+
+        <!-- Bottom Area -->
+        <LinearLayout
+            android:id="@+id/layout_bottom_menu_area"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!-- 키패드 -->
+            <LinearLayout
+                android:id="@+id/linearlayout_1"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/C_FFFFFF"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="@{() -> activity.onClick_Tab(1)}"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/test01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/ic_keypad_24dp" />
+
+                <!-- 1번 탭 텍스트 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/str_keypad"
+                    android:textColor="@color/C_000000"
+                    android:textSize="13dp"
+                    app:fontPath="fonts/homenumberB.ttf.mp3" />
+            </LinearLayout>
+
+            <!-- 물품정보  -->
+            <LinearLayout
+                android:id="@+id/linearlayout_2"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/C_EFEFEF"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="@{() -> activity.onClick_Tab(2)}"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/test02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/ic_product" />
+
+                <!-- 2번 탭 텍스트 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/str_item_info"
+                    android:textColor="@color/C_000000"
+                    android:textSize="13dp"
+                    app:fontPath="fonts/homenumberB.ttf.mp3" />
+
+            </LinearLayout>
+
+            <!-- 히스토리  -->
+            <LinearLayout
+                android:id="@+id/linearlayout_3"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/C_EFEFEF"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="@{() -> activity.onClick_Tab(3)}"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/test03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/ic_note" />
+
+                <!-- 3번 탭 텍스트 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/str_print_log"
+                    android:textColor="@color/C_000000"
+                    android:textSize="13dp"
+                    app:fontPath="fonts/homenumberB.ttf.mp3" />
+            </LinearLayout>
+
+            <!-- 설정화면 -->
+            <LinearLayout
+                android:id="@+id/linearlayout_4"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/C_EFEFEF"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="@{() -> activity.onClick_Tab(4)}"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/test04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/ic_menu" />
+
+
+                <!-- 5번 탭 텍스트 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/str_setting"
+                    android:textColor="@color/C_000000"
+                    android:textSize="13dp"
+                    app:fontPath="fonts/homenumberB.ttf.mp3" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

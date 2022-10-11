@@ -1,0 +1,411 @@
+<!-- 주소록 Fragment -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.homenumber.print_2.activity.simpleactivity.HistoryDetailActivity" />
+    </data>
+
+    <!-- 부모 레이아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/C_FFFFFF"
+        android:orientation="vertical">
+
+        <!-- 상태바 형식의 헤드라인 -->
+        <include
+            android:id="@+id/layout_header"
+            layout="@layout/fragment_top_area" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 상품명 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center|start">
+
+                <!-- 타이틀 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_header_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@string/str_item_name"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 입력창 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_item_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/txt_header_1"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center|end"
+                    android:hint="@string/msg_item_name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/C_000000"
+                    android:textSize="12dp"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+            </RelativeLayout>
+
+            <!-- 상품 추가 정보 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center|start">
+
+                <!-- 타이틀 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_header_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@string/str_item_name2"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 입력창 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_item_name_plus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/txt_header_2"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center|end"
+                    android:hint="@string/msg_item_name_plus2"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/C_000000"
+                    android:textSize="12dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+            </RelativeLayout>
+
+            <!-- 물품 가격 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center|start">
+
+                <!-- 타이틀 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_header_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@string/str_item_price2"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 입력창 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_item_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_toEndOf="@id/txt_header_3"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center|end"
+                    android:hint="@string/msg_item_price"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:textColor="@color/C_000000"
+                    android:textSize="12dp"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 만원 -->
+                <TextView
+                    android:id="@+id/text_manwon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/txt_header_3"
+                    android:gravity="center|end"
+                    android:text="만원"
+                    android:textColor="@color/C_000000"
+                    android:textSize="12dp" />
+
+                <!-- 안내 -->
+                <TextView
+                    android:id="@+id/text_manwon2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/txt_header_3"
+                    android:enabled="false"
+                    android:gravity="bottom|end"
+                    android:text="@string/msg_over_plus_price"
+                    android:textColor="#B3FF0000"
+                    android:textSize="10dp" />
+            </RelativeLayout>
+
+            <!-- 결제 방법 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center|start">
+
+                <!-- 타이틀 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_header_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="결제 방법"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 입력창 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_item_how"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/txt_header_plus"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center|end"
+                    android:maxLines="1"
+                    android:text="선불"
+                    android:textColor="@color/C_000000"
+                    android:textSize="12dp"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+            </RelativeLayout>
+
+
+            <!-- 수량 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center|start"
+                android:visibility="gone">
+
+                <!-- 타이틀 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_header_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@string/str_item_number"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+
+                    android:visibility="gone"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 입력창 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_item_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/txt_header_4"
+                    android:background="@null"
+                    android:gravity="center|end"
+                    android:hint="@string/msg_item_number"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:textColor="@color/C_000000"
+                    android:textSize="12dp"
+                    android:visibility="gone"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+            </RelativeLayout>
+
+            <!-- 무게 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center|start"
+                android:visibility="gone">
+
+                <!-- 타이틀 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_header_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@string/str_item_kg"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+                    android:visibility="gone"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 입력창 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_item_kg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/txt_header_5"
+                    android:background="@null"
+                    android:gravity="center|end"
+                    android:hint="@string/msg_item_kg"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:textColor="@color/C_000000"
+                    android:textSize="12dp"
+
+                    android:visibility="gone"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+            </RelativeLayout>
+
+            <!-- 배송 메세지 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center|start"
+                android:visibility="gone">
+
+                <!-- 타이틀 -->
+
+                <!-- 입력창 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_item_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/txt_header_6"
+                    android:background="@null"
+                    android:gravity="center|end"
+                    android:hint="@string/msg_item_message"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/C_000000"
+                    android:textSize="12dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_header_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@string/str_item_message"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+            </RelativeLayout>
+
+            <!-- 메모 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center|start"
+                android:visibility="gone">
+
+                <!-- 타이틀 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_header_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@string/str_memo"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 입력창 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_item_memo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/txt_header_7"
+                    android:background="@null"
+                    android:gravity="center|end"
+                    android:hint="@string/msg_bottom_sheet_hint_memo"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/C_000000"
+                    android:textSize="12dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <!-- 확인 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_ok"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/drawable_custom_button_round_on"
+                android:elevation="10dp"
+                android:letterSpacing="0"
+                android:onClick="@{(view) -> activity.onClick(view)}"
+                android:text="@string/str_ok"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:layout_centerHorizontal="true"
+                app:fontPath="fonts/homenumber.ttf.mp3" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

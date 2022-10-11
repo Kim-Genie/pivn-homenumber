@@ -1,0 +1,75 @@
+<!-- 상태바 형식의 헤드라인 -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/C_F5F5F5"
+    android:orientation="vertical">
+
+    <!-- 상단 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/C_FFFFFF"
+        android:gravity="center">
+
+        <!-- 대표 아이콘 -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/img_alert_header" />
+    </LinearLayout>
+
+    <!-- 하단 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="배송메세지를 작성해주세요."
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp"
+
+            app:fontPath="fonts/homenumberB.ttf.mp3" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_accept_number"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@id/txt_header"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/drawable_customers_join_edit_box"
+            android:hint="배송메세지를 입력해주세요."
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:textColor="@color/C_000000"
+            android:textSize="12.5dp"
+
+            app:fontPath="fonts/homenumber.ttf.mp3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_phonenumber_accept"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/et_accept_number"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/drawable_radius_login_button"
+            android:text="@string/str_confirm"
+            android:textColor="@color/C_FFFFFF"
+            android:textSize="15dp"
+
+            app:fontPath="fonts/homenumberB.ttf.mp3" />
+    </RelativeLayout>
+</LinearLayout>

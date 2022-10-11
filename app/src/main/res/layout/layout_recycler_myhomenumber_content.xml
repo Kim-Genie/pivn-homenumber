@@ -1,0 +1,61 @@
+<!-- 출력내역 아이템 -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="com.homenumber.print_2.adapter.recyclerview.MyHomeNumberListAdapter" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layout_shopmall"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:background="@drawable/drawable_content_box"
+        android:clickable="false"
+        android:elevation="0dp"
+        android:focusable="false"
+        android:weightSum="3">
+
+
+        <TextView
+            android:id="@+id/txt_nomalHn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.95"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="10100000000"
+            android:textColor="@color/C_000000"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:id="@+id/txt_goldHn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.95"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="10100000000"
+            android:textColor="@color/C_000000"
+            android:textSize="13sp"
+            />
+        <TextView
+            android:id="@+id/txt_blngHn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="10100000000"
+            android:textColor="@color/C_000000"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+</layout>

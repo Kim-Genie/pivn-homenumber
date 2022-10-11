@@ -1,0 +1,88 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/C_000000</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="floatingActionButtonStyle">@style/Widget.App.FloatingActioButton</item>
+
+    </style>
+
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/C_FFFFFF</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="floatingActionButtonStyle">@style/Widget.App.FloatingActioButton</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">stateHidden</item>
+    </style>
+
+    <style name="Widget.App.FloatingActioButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.FloatingActionButton</item>
+
+    </style>
+
+    <style name="ThemeOverlay.App.FloatingActionButton" parent="">
+        <item name="colorSecondary">@color/C_DA6C6B</item>
+        <item name="colorOnSecondary">@color/C_FFFFFF</item>
+        <!--        <item name="colorOnSurface">@color/colorAccent</item>-->
+
+    </style>
+
+    <!-- Widget_Material_ButtonBar_AlertDialog -->
+    <!-- android.R.style.Widget_Material_ButtonBar_AlertDialog -->
+    <style name="AlertDialogCustom" parent="android:Widget.Material.Light.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/C_FF0000</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+
+        <item name="android:windowIsFloating">false</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@color/C_FFFFFF</item>
+
+    </style>
+    <style name="AlertDialogTheme" parent="android:Widget.Material.Light.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/C_FF0000</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="hintTextColor">@color/C_DA6C6B</item>
+        <item name="colorPrimary">@color/C_DA6C6B</item>
+        <item name="colorOnSurface">@color/C_58595B</item>
+        <item name="colorError">@android:color/holo_red_dark</item>
+        <item name="colorAccent">@android:color/holo_red_dark</item>
+        <item name="colorControlNormal">@color/C_DA6C6B</item>
+        <item name="colorControlActivated">@color/C_DA6C6B</item>
+    </style>
+
+    <style name="filledboxStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+    </style>
+
+    <style name="iamitem" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+
+    </style>
+
+
+
+
+
+</resources>

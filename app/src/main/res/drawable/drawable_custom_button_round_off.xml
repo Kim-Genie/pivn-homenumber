@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#FFFFFF">
+
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="30dp" />
+        </shape>
+    </item>
+
+    <!-- 배경색 -->
+    <item
+        android:id="@android:id/background">
+        <shape
+            android:shape="rectangle">
+
+            <!-- 전체 배경 색상 -->
+            <solid android:color="#8C8C8C"/>
+
+            <!-- 레이아웃 안쪽으로 색상과 길이 설정 -->
+            <stroke android:width="0px" android:color="#000000"/>
+
+            <!-- 모서리 코너가 둥글게 되는 길이 설정 -->
+            <corners android:radius="50dp"/>
+
+            <!-- padding -->
+            <padding android:left="0dp" android:right="0dp" android:top="0dp" android:bottom="0dp"/>
+
+        </shape>
+    </item>
+
+
+</ripple>

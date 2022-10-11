@@ -1,0 +1,316 @@
+<!-- 더보기 Fragment -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragmentSetting"
+            type="com.homenumber.print_2.fragment.Fragment_Setting" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layout_fragment_5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/C_FFFFFF"
+        android:orientation="vertical">
+
+        <!-- 상태바 형식의 헤드라인 -->
+        <include
+            android:id="@+id/layout_header"
+            layout="@layout/fragment_top_area" />
+
+        <!-- 사용자 정보 -->
+        <RelativeLayout
+            android:id="@+id/layout_my_info"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?selectableItemBackground"
+            android:gravity="center|start"
+            android:onClick="@{() -> fragmentSetting.onClickMyInfo()}">
+
+            <!-- 사용자 아이콘 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_user_24dp" />
+
+            <!-- 타이틀 :: 아이디 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/iv_user"
+                android:gravity="center"
+                android:text="@string/str_my_info"
+                android:textColor="@color/C_000000"
+                android:textSize="15dp" />
+
+            <!-- 아이디 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:gravity="center|end"
+                android:textColor="@color/C_000000"
+                android:textSize="13dp"/>
+        </RelativeLayout>
+
+
+        <!-- 로그아웃 -->
+        <RelativeLayout
+            android:id="@+id/layout_logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?selectableItemBackground"
+            android:gravity="center|start"
+            android:onClick="@{() -> fragmentSetting.requestLogout()}">
+
+            <!-- 로그아웃 아이콘 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_logout" />
+
+            <!-- 로그아웃 텍스트 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/iv_logout"
+                android:gravity="center"
+                android:text="로그아웃"
+                android:textColor="@color/C_000000"
+                android:textSize="15dp" />
+        </RelativeLayout>
+        <!-- 사용자 추천 -->
+        <RelativeLayout
+            android:id="@+id/layout_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?selectableItemBackground"
+            android:gravity="center|start"
+            android:onClick="@{() -> fragmentSetting.onClickRecommend()}">
+
+            <!-- 사용자 추천아이콘 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_plus" />
+
+            <!-- 타이틀 :: 아이디 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/iv_recommend"
+                android:gravity="center"
+                android:text="@string/str_recommend"
+                android:textColor="@color/C_000000"
+                android:textSize="15dp" />
+
+            <!-- 아이디 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:gravity="center|end"
+                android:textColor="@color/C_000000"
+                android:textSize="13dp"
+
+                app:fontPath="fonts/homenumber.ttf.mp3" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_hn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?selectableItemBackground"
+            android:gravity="center|start"
+            android:onClick="@{() -> fragmentSetting.onClickMyHomeNumber()}">
+
+            <!-- 사용자 추천아이콘 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_hn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_homenumber" />
+
+            <!-- 타이틀 :: 아이디 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/iv_hn"
+                android:gravity="center"
+                android:text="@string/str_hn"
+                android:textColor="@color/C_000000"
+                android:textSize="15dp" />
+
+            <!-- 아이디 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_hn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:gravity="center|end"
+                android:textColor="@color/C_000000"
+                android:textSize="13dp"
+
+                app:fontPath="fonts/homenumber.ttf.mp3" />
+        </RelativeLayout>
+
+        <!-- 키패드 설정 -->
+        <RelativeLayout
+            android:id="@+id/layout_keypad_setting"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?selectableItemBackground"
+            android:gravity="center|start"
+            android:onClick="@{() -> fragmentSetting.onClickKeypadSetting()}">
+
+            <!-- 키패드 설정 아이콘 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_keypad_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_keypad_24dp" />
+
+            <!-- 키패드 설정 텍스트 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/iv_keypad_setting"
+                android:gravity="center"
+                android:text="@string/str_setting_keypad"
+                android:textColor="@color/C_000000"
+                android:textSize="15dp" />
+
+            <!-- 키패드 설정 결과 텍스트 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_keypad_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:gravity="center|end"
+                android:textColor="@color/C_000000"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <!-- 앱 정보 -->
+        <RelativeLayout
+            android:id="@+id/layout_app_version"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?selectableItemBackground"
+            android:gravity="center|start">
+
+            <!-- 앱 아이콘 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_information_24dp" />
+
+            <!-- 앱 버전 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_app_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/iv_app_icon"
+                android:gravity="center"
+                android:textColor="@color/C_000000"
+                android:textSize="15dp"
+
+                app:fontPath="fonts/homenumber.ttf.mp3" />
+        </RelativeLayout>
+
+        <!-- 고객센터 -->
+        <RelativeLayout
+            android:id="@+id/layout_support_number"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center|start">
+
+            <!-- 고객센터 아이콘 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_support"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_call_24dp" />
+
+            <!-- 고객센터 텍스트 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/iv_support"
+                android:gravity="center"
+                android:text="@string/str_support_center"
+                android:textColor="@color/C_000000"
+                android:textSize="15dp" />
+
+            <!-- 휴대폰번호 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_support_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:gravity="center|end"
+                android:text=""
+                android:textColor="@color/C_000000"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

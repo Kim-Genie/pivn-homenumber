@@ -1,0 +1,506 @@
+<!-- MyInfoActivity -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.simpleactivity.MyInfoActivity">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.homenumber.print_2.activity.simpleactivity.MyInfoActivity" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/C_FFFFFF"
+            android:orientation="vertical">
+
+            <!-- 헤더 -->
+            <RelativeLayout
+                android:id="@+id/layout_header"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{() -> activity.workFinish()}"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:src="@drawable/ic_keyboard_backspace_black_24dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_fragment_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="나의 홈넘버"
+                    android:textColor="@color/C_000000"
+                    android:textSize="17dp"/>
+            </RelativeLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/second_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:background="@null"
+            android:stateListAnimator="@null"
+            android:onClick="@{() -> activity.selectedHomenumber(0)}"
+            android:visibility="visible"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/layout_name1"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center|start">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_000000"
+                    android:textSize="16.5dp"
+                    android:text="김민재" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_alias1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_ADADAD"
+                    android:layout_toEndOf="@id/txt_user_name1"
+                    android:textSize="13.5dp"
+                    android:text="집" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/leftend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="@{() -> activity.deleteHn(0)}"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="25dp"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+                    android:text="삭제" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/center_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/C_ADADAD"
+                    android:layout_toStartOf="@id/leftend"
+                    android:textSize="15dp"
+                    android:text="|" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rightend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/center_str"
+                    android:textStyle="bold"
+                    android:paddingHorizontal="10dp"
+                    android:text="수정"
+                    android:onClick="@{() -> activity.getModify(0)}"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rightend3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/C_ADADAD"
+                    android:layout_toStartOf="@id/rightend"
+                    android:textSize="15dp"
+                    android:text="|" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/rightend"
+                    android:textStyle="bold"
+                    android:paddingHorizontal="10dp"
+                    android:text="QR CODE"
+                    android:onClick="@{() -> activity.getQRView(0)}"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp" />
+
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:stateListAnimator="@null"
+
+                android:gravity="center|start">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_hn"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_homenumber"
+                    app:tint="@color/C_000000"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_homenumber1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/ic_hn"
+                    android:gravity="center|end"
+                    android:text="101-0000-0001"
+                    android:textColor="@color/C_000000"
+                    android:textSize="13.5dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/layout_call1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:stateListAnimator="@null"
+                android:gravity="center|start">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_call"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_call_24dp"
+                    app:tint="@color/C_000000"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_normal_call1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_000000"
+                    android:textSize="13.5dp"
+                    android:text="010-4079-4281"
+                    android:layout_toEndOf="@id/ic_call"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_mobile_phone"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_mobile_phone"
+                    android:layout_centerVertical="true"
+                    app:tint="@color/C_000000"
+                    android:layout_toEndOf="@id/txt_user_normal_call1"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_call1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_000000"
+                    android:textSize="13.5dp"
+                    android:text="02-1234-5678"
+                    android:layout_toEndOf="@id/ic_mobile_phone"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/layout_item_box1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_address1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center|start"
+                    android:textColor="@color/C_000000"
+                    android:text="서울특별시 강남구 테헤란로 105동 메모빌딩 5층 506호 가ㅣ나다라마바아아아아아아아아"
+                    android:textSize="13.5dp" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/iv_view1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginVertical="20dp"
+
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/C_ADADAD"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:background="@null"
+            android:stateListAnimator="@null"
+            android:onClick="@{() -> activity.selectedHomenumber(1)}"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+            <!---->
+            <RelativeLayout
+                android:id="@+id/layout_name2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@null"
+                android:stateListAnimator="@null"
+                android:gravity="center|start">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_000000"
+                    android:textSize="16.5dp"
+                    android:text="" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_alias2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_ADADAD"
+                    android:layout_toEndOf="@id/txt_user_name2"
+                    android:textSize="13.5dp"
+                    android:text="" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/leftend2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="25dp"
+                    android:onClick="@{() -> activity.deleteHn(1)}"
+                    android:textStyle="bold"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp"
+                    android:text="삭제" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/center_str2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/C_ADADAD"
+                    android:layout_toStartOf="@id/leftend2"
+                    android:textSize="15dp"
+                    android:text="|" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rightend2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/center_str2"
+                    android:paddingHorizontal="10dp"
+                    android:textStyle="bold"
+                    android:text="수정"
+                    android:onClick="@{() -> activity.getModify(1)}"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rightend4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/C_ADADAD"
+                    android:layout_toStartOf="@id/rightend2"
+                    android:textSize="15dp"
+                    android:text="|" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/rightend4"
+                    android:textStyle="bold"
+                    android:paddingHorizontal="10dp"
+                    android:text="QR CODE"
+                    android:onClick="@{() -> activity.getQRView(1)}"
+                    android:textColor="@color/C_000000"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:stateListAnimator="@null"
+                android:gravity="center|start">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_hn2"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_homenumber"
+                    app:tint="@color/C_000000"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_homenumber2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_000000"
+                    android:textSize="13.5dp"
+                    android:layout_toEndOf="@id/ic_hn2"
+                    android:text="101-0000-0001"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/layout_call2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:stateListAnimator="@null"
+                android:gravity="center|start">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_call2"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_call_24dp"
+                    app:tint="@color/C_000000"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_normal_call2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_000000"
+                    android:text="010-4079-4281"
+                    android:textSize="13.5dp"
+                    android:layout_toEndOf="@id/ic_call2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_mobile_phone2"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_mobile_phone"
+                    android:layout_centerVertical="true"
+                    app:tint="@color/C_000000"
+                    android:layout_toEndOf="@id/txt_user_normal_call2"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_call2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true"
+                    android:gravity="center|end"
+                    android:textColor="@color/C_000000"
+                    android:textSize="13.5dp"
+                    android:text="02-1234-5678"
+                    android:layout_toEndOf="@id/ic_mobile_phone2"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/layout_item_box2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:stateListAnimator="@null"
+                android:gravity="center|start">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_user_address2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center|start"
+                    android:textColor="@color/C_000000"
+                    android:text="서울특별시 강남구 테헤란로 105동 메모빌딩 5층 506호 가ㅣ나다라마바아아아아아아아아"
+                    android:textSize="13.5dp" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/iv_view2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/C_ADADAD" />
+        </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_print"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/layout_border_all"
+                    android:elevation="10dp"
+                    android:letterSpacing="0"
+                    android:text="홈넘버 추가"
+                    android:textColor="@color/C_FFFFFF"
+                    android:drawablePadding="10dp"
+                    android:onClick="@{() -> activity.getModify(1)}"
+                    android:textSize="18dp"
+                    android:drawableTint="@color/C_ADADAD"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

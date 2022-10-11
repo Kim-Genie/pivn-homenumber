@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@android:color/darker_gray">
+
+
+
+
+
+    <!-- 배경색 -->
+    <item
+        android:id="@android:id/background">
+
+        <inset android:insetBottom="2dp">
+            <selector>
+                <item android:state_pressed="false" android:color="@android:color/black">
+                    <shape android:shape="rectangle">
+                    </shape>
+                </item>
+
+                <item android:state_pressed="true" android:color="@android:color/holo_red_dark">
+                    <shape android:shape="rectangle">
+                    </shape>
+                </item>
+            </selector>
+        </inset>
+    </item>
+
+
+</ripple>

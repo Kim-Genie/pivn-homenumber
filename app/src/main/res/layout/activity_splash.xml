@@ -1,0 +1,30 @@
+<!-- SplashActivity -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.simpleactivity.SplashActivity">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.homenumber.print_2.activity.simpleactivity.SplashActivity" />
+    </data>
+
+    <!-- 부모 레이아웃 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/C_ED2428">
+
+
+        <!-- 메인 이미지 -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_splash_homenumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/img_splash_new3" />
+
+    </RelativeLayout>
+</layout>

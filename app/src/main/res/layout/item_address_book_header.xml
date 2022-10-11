@@ -1,0 +1,35 @@
+<!-- 주소록 Sticky Header -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="sticky_header"
+            type="com.homenumber.print_2.fragment.Fragment_ItemInfo" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layout_print_log_header"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/C_DDDDDD"
+        android:orientation="vertical">
+
+        <!-- 초성 구분자 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_header"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/C_000000"
+            android:textSize="12dp"
+
+            app:fontPath="fonts/homenumberB.ttf.mp3" />
+    </LinearLayout>
+
+</layout>

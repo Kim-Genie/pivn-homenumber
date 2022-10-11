@@ -1,0 +1,82 @@
+<!-- 출력내역 아이템 -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="sticky_child"
+            type="com.homenumber.print_2.fragment.Fragment_ItemInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_print_log"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/drawable_content_box"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:focusable="true"
+        android:gravity="center|start"
+        android:orientation="vertical">
+
+        <!-- 프로필 아이콘 -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_user_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/img_user_default"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 홈넘버 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_homenumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="2.5dp"
+            android:textColor="@color/C_000000"
+            android:textSize="14dp"
+
+            app:fontPath="fonts/homenumber.ttf.mp3"
+
+            app:layout_constraintBottom_toTopOf="@id/txt_name"
+            app:layout_constraintStart_toEndOf="@id/iv_user_profile"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <!-- 이름 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="2.5dp"
+            android:textColor="@color/C_000000"
+            android:textSize="14dp"
+
+            app:fontPath="fonts/homenumber.ttf.mp3"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_user_profile"
+            app:layout_constraintTop_toBottomOf="@id/txt_homenumber" />
+
+        <!-- 출력정보 상세 확인 -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

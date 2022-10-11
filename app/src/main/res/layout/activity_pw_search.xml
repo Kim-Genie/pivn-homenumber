@@ -1,0 +1,241 @@
+<!-- UserPWChangeActivity -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.simpleactivity.UserPWSearchActivity">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.homenumber.print_2.activity.simpleactivity.UserPWSearchActivity" />
+    </data>
+
+    <!-- 부모 레이아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/C_FFFFFF"
+        android:orientation="vertical">
+
+        <!-- 헤더 -->
+        <RelativeLayout
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/C_EFEFEF"
+            android:elevation="20dp">
+
+            <!-- 뒤로가기(취소) -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_back"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> activity.workFinish()}"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:src="@drawable/ic_keyboard_backspace_black_24dp" />
+        </RelativeLayout>
+
+        <!-- 아이디 입력 -->
+        <LinearLayout
+            android:id="@+id/layout_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <!-- 아이디 입력칸 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:orientation="vertical">
+
+                <!-- 현재 비밀번호 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="45dp"
+                    android:gravity="center"
+                    android:text="홈넘버"
+                    android:textColor="@color/C_000000"
+                    android:textSize="20dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 현재 비밀번호 입력칸 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_hn"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginEnd="45dp"
+                    android:background="@drawable/drawable_customers_join_edit_box"
+                    android:gravity="center"
+                    android:hint="가입된 홈넘버를 입력해주세요."
+                    android:inputType="number"
+                    android:textColor="@color/C_000000"
+                    android:textColorHint="@color/C_888888"
+                    android:textSize="20dp"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+                <!-- 현재 비밀번호 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/str_phone_number"
+                    android:textColor="@color/C_000000"
+
+                    android:textSize="20dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 현재 비밀번호 입력칸 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginEnd="45dp"
+                    android:background="@drawable/drawable_customers_join_edit_box"
+                    android:gravity="center"
+                    android:hint="@string/msg_bottom_sheet_hint_phonenumber"
+                    android:inputType="number"
+                    android:textColor="@color/C_000000"
+                    android:textColorHint="@color/C_888888"
+                    android:textSize="20dp"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+
+            </LinearLayout>
+
+            <!-- 비밀번호 찾기 버튼 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_id_accept"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="45dp"
+                android:background="@drawable/drawable_custom_button_round_on"
+                android:elevation="10dp"
+                android:letterSpacing="0"
+                android:text="휴대폰번호 인증"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:onClick="@{() -> activity.requestIdAccept()}"
+
+                app:fontPath="fonts/homenumber.ttf.mp3" />
+        </LinearLayout>
+
+        <!-- 비밀번호 수정 -->
+        <LinearLayout
+            android:id="@+id/layout_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- 비밀번호 첫값 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:orientation="vertical">
+
+                <!-- 현재 비밀번호 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="45dp"
+                    android:gravity="center"
+                    android:text="변경할 비밀번호"
+                    android:textColor="@color/C_000000"
+                    android:textSize="20dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 현재 비밀번호 입력칸 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_pw"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginEnd="45dp"
+                    android:background="@drawable/drawable_customers_join_edit_box"
+                    android:gravity="center"
+                    android:inputType="textPassword"
+                    android:textColor="@color/C_000000"
+                    android:textSize="20dp"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+            </LinearLayout>
+
+            <!-- 비밀번호 수정값 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:orientation="vertical">
+
+                <!-- 현재 비밀번호 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="45dp"
+                    android:gravity="center"
+                    android:text="변경할 비밀번호 확인"
+                    android:textColor="@color/C_000000"
+                    android:textSize="20dp"
+
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+
+                <!-- 현재 비밀번호 입력칸 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_pw_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginEnd="45dp"
+                    android:background="@drawable/drawable_customers_join_edit_box"
+                    android:gravity="center"
+                    android:inputType="textPassword"
+                    android:textColor="@color/C_000000"
+                    android:textSize="20dp"
+                    app:fontPath="fonts/homenumber.ttf.mp3" />
+            </LinearLayout>
+
+            <!-- 비밀번호 찾기 버튼 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_pw_chagne"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="45dp"
+                android:background="@drawable/drawable_custom_button_round_on"
+                android:elevation="10dp"
+                android:letterSpacing="0"
+                android:text="비밀번호 변경"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:onClick="@{() -> activity.workPWChange()}"
+
+                app:fontPath="fonts/homenumber.ttf.mp3" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

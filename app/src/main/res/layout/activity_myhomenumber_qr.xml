@@ -1,0 +1,112 @@
+<!-- DeliveryCJActivity -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.simpleactivity.MyHomeNumberQRActivity">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.homenumber.print_2.activity.simpleactivity.MyHomeNumberQRActivity" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/C_FFFFFF"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:elevation="20dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- 뒤로가기(취소) -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_back"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> activity.workFinish()}"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:src="@drawable/ic_keyboard_backspace_black_24dp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:paddingVertical="20dp"
+            android:gravity="center|start">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:text="QR CODE"
+                android:textSize="28dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/C_000000"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_below="@id/txt01"
+                android:paddingStart="20dp"
+                android:text="자신의 홈넘버 QR CODE를 상대방에게 알려주세요"
+                android:layout_marginBottom="30dp"
+                android:textSize="15dp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt04"
+                android:layout_below="@id/txt03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:text="10100000000"
+                android:letterSpacing="0.4"
+                android:textSize="34dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/C_000000"/>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/qrcode"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</layout>
